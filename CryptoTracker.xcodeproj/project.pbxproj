@@ -21,6 +21,7 @@
 		E5222C9F2951D3C90010237E /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5222C9E2951D3C90010237E /* Double+Extensions.swift */; };
 		E5222CA1295235660010237E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5222CA0295235660010237E /* HomeViewModel.swift */; };
 		E5222CA429523BCF0010237E /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5222CA329523BCF0010237E /* CoinDataService.swift */; };
+		E5222CA7295268410010237E /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5222CA6295268410010237E /* NetworkingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		E5222C9E2951D3C90010237E /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		E5222CA0295235660010237E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E5222CA329523BCF0010237E /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
+		E5222CA6295268410010237E /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		E5222C7529509A560010237E /* CryptoTracker */ = {
 			isa = PBXGroup;
 			children = (
+				E5222CA5295268150010237E /* Utilities */,
 				E5222C882950A0400010237E /* Extensions */,
 				E5222CA229523BAF0010237E /* Services */,
 				E5222C972950F3020010237E /* Models */,
@@ -169,6 +172,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		E5222CA5295268150010237E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E5222CA6295268410010237E /* NetworkingManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,6 +258,7 @@
 				E5222C7729509A560010237E /* CryptoTrackerApp.swift in Sources */,
 				E5222C9F2951D3C90010237E /* Double+Extensions.swift in Sources */,
 				E5222C942950AA1A0010237E /* CircleButtonView.swift in Sources */,
+				E5222CA7295268410010237E /* NetworkingManager.swift in Sources */,
 				E5222C8A2950A0590010237E /* Color+Extensions.swift in Sources */,
 				E5222C962950AE860010237E /* CircleButtonAnimationView.swift in Sources */,
 				E5222C9D2951D1A90010237E /* PreviewProvider.swift in Sources */,
