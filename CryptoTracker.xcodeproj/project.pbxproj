@@ -25,6 +25,7 @@
 		E570F8FB29535D69009C85B1 /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570F8FA29535D69009C85B1 /* CoinImageView.swift */; };
 		E570F8FD29535E96009C85B1 /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570F8FC29535E96009C85B1 /* CoinImageService.swift */; };
 		E570F8FF29535FA8009C85B1 /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570F8FE29535FA8009C85B1 /* CoinImageViewModel.swift */; };
+		E570F9012953AA74009C85B1 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570F9002953AA74009C85B1 /* LocalFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		E570F8FA29535D69009C85B1 /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
 		E570F8FC29535E96009C85B1 /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
 		E570F8FE29535FA8009C85B1 /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
+		E570F9002953AA74009C85B1 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				E5222CA6295268410010237E /* NetworkingManager.swift */,
+				E570F9002953AA74009C85B1 /* LocalFileManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				E5222C9B2951D1340010237E /* CoinRowView.swift in Sources */,
 				E5222CA1295235660010237E /* HomeViewModel.swift in Sources */,
 				E5222C7929509A560010237E /* ContentView.swift in Sources */,
+				E570F9012953AA74009C85B1 /* LocalFileManager.swift in Sources */,
 				E5222C902950A8E60010237E /* HomeView.swift in Sources */,
 				E570F8FB29535D69009C85B1 /* CoinImageView.swift in Sources */,
 				E5222C7729509A560010237E /* CryptoTrackerApp.swift in Sources */,
