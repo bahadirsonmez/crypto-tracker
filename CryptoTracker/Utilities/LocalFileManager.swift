@@ -26,7 +26,7 @@ class LocalFileManager {
         do {
             try data.write(to: url)
         } catch let error {
-            print("Error saving image: ImageName: \(imageName). \(error.localizedDescription)")
+            print("Error saving image: ImageName: \(imageName). \(error)")
         }
     }
     
@@ -43,7 +43,7 @@ class LocalFileManager {
         
         if !FileManager.default.fileExists(atPath: url.path) {
             do {
-                try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
+                try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
             } catch let error {
                 print("Error creating directory. FolderName: \(folderName). \(error)")
             }
