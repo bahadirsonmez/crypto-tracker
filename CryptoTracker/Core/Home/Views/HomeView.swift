@@ -40,8 +40,14 @@ struct HomeView: View {
                     allCoinsList
                         .transition(.move(edge: .leading))
                 } else {
-                    portfolioCoinsList
-                        .transition(.move(edge: .trailing))
+                    ZStack(alignment: .top) {
+                        if viewModel.portfolioCoins.isEmpty {
+                            portfolioEmptyText
+                        } else {
+                            portfolioCoinsList
+                        }
+                    }
+                    .transition(.move(edge: .trailing))
                 }
                 
                 Spacer(minLength: 0)
@@ -110,6 +116,15 @@ extension HomeView {
             }
         }
         .listStyle(.plain)
+    }
+    
+    private var portfolioEmptyText: some View {
+        Text("You haven't added any coins to your portfolio yet. Click to + button to get started!! 🧐")
+            .font(.callout)
+            .fontWeight(.medium)
+            .foregroundColor(Color.theme.accent)
+            .multilineTextAlignment(.center)
+            .padding(50)
     }
     
     private var portfolioCoinsList: some View {
