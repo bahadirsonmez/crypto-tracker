@@ -12,9 +12,10 @@ class DetailViewModel: ObservableObject {
     
     @Published var overviewStatistics: [StatisticModel] = []
     @Published var additionalStatistics: [StatisticModel] = []
-    
-    @Published var coinDetail: CoinDetailModel?
-    
+    @Published var coinDescription: String? = nil
+    @Published var coinURL: String? = nil
+    @Published var redditURL: String? = nil
+        
     @Published var coin: CoinModel
     private let coinDetailService: CoinDetailDataService
     private var cancellables = Set<AnyCancellable>()
@@ -34,17 +35,20 @@ class DetailViewModel: ObservableObject {
             .sink { [weak self] returnedArrays in
                 self?.overviewStatistics = returnedArrays.overview
                 self?.additionalStatistics = returnedArrays.additional
+                self?.coinDescription = returnedArrays.detail?.readableDescription
+                self?.coinURL = returnedArrays.detail?.links?.homepage?.first
+                self?.redditURL = returnedArrays.detail?.links?.subredditURL
             }
             .store(in: &cancellables)
         
     }
     
-    private func mapDataToStatistics(coinDetailModel: CoinDetailModel?, coinModel: CoinModel) -> (overview: [StatisticModel], additional: [StatisticModel]) {
+    private func mapDataToStatistics(coinDetailModel: CoinDetailModel?, coinModel: CoinModel) -> (overview: [StatisticModel], additional: [StatisticModel], detail: CoinDetailModel?) {
         
         let overviewArray = createOverviewStatistics(coinModel: coinModel)
         let additionalArray = createAdditionalStatistics(coinDetailModel: coinDetailModel, coinModel: coinModel)
         
-        return (overviewArray, additionalArray)
+        return (overviewArray, additionalArray, coinDetailModel)
     }
     
     private func createOverviewStatistics(coinModel: CoinModel) -> [StatisticModel] {
