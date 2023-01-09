@@ -35,7 +35,7 @@ final class NetworkingManager {
         }
     }
     
-    static func getData<T: Codable>(from url: URL) -> AnyPublisher<T, any Error> {
+    static func getData<T: Decodable>(type: T.Type = Data.self, from url: URL) -> AnyPublisher<T, any Error> {
         return URLSession.shared.dataTaskPublisher(for: url)
             .tryMap({ try handleURLResponse(output: $0, url: url) })
             .decode(type: T.self, decoder: JSONDecoder())
