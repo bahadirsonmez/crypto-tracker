@@ -45,6 +45,8 @@
 		E57F203E295C9929001F7526 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F203D295C9929001F7526 /* HapticManager.swift */; };
 		E58F0DD1295B606600B03E0C /* PortfolioContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E58F0DCF295B606600B03E0C /* PortfolioContainer.xcdatamodeld */; };
 		E58F0DD3295B60F800B03E0C /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58F0DD2295B60F800B03E0C /* PortfolioDataService.swift */; };
+		E5D57263296C9F8D003DD80A /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D57262296C9F8D003DD80A /* Notification+Extensions.swift */; };
+		E5D57266296C9FC2003DD80A /* AlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D57265296C9FC2003DD80A /* AlertData.swift */; };
 		E5DB865C29687A7A00DAD85B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5DB865B29687A7A00DAD85B /* Launch Screen.storyboard */; };
 		E5DB865E296AE34600DAD85B /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DB865D296AE34600DAD85B /* LaunchView.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +91,8 @@
 		E57F203D295C9929001F7526 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		E58F0DD0295B606600B03E0C /* PortoflioContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortoflioContainer.xcdatamodel; sourceTree = "<group>"; };
 		E58F0DD2295B60F800B03E0C /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
+		E5D57262296C9F8D003DD80A /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
+		E5D57265296C9FC2003DD80A /* AlertData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertData.swift; sourceTree = "<group>"; };
 		E5DB865B29687A7A00DAD85B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E5DB865D296AE34600DAD85B /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,6 +198,7 @@
 				E57443C72954B5BF00963673 /* UIApplication+Extensions.swift */,
 				E55952F4295F865D00C0F301 /* String+Extensions.swift */,
 				E54EF345296467EF005D33C6 /* Date+Extensions.swift */,
+				E5D57262296C9F8D003DD80A /* Notification+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -305,17 +310,18 @@
 		E5D57260296C471B003DD80A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E5D57261296C4721003DD80A /* Service */,
+				E5D57264296C9FAE003DD80A /* Error Handling */,
 				E5222CA6295268410010237E /* NetworkingManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		E5D57261296C4721003DD80A /* Service */ = {
+		E5D57264296C9FAE003DD80A /* Error Handling */ = {
 			isa = PBXGroup;
 			children = (
+				E5D57265296C9FC2003DD80A /* AlertData.swift */,
 			);
-			path = Service;
+			path = "Error Handling";
 			sourceTree = "<group>";
 		};
 		E5DB865929687A5D00DAD85B /* Launch */ = {
@@ -412,6 +418,7 @@
 				E54EF34429645B81005D33C6 /* ChartView.swift in Sources */,
 				E5222C9B2951D1340010237E /* CoinRowView.swift in Sources */,
 				E55952F5295F865D00C0F301 /* String+Extensions.swift in Sources */,
+				E5D57263296C9F8D003DD80A /* Notification+Extensions.swift in Sources */,
 				E5045DBC2965DECA0069FA8F /* SettingsView.swift in Sources */,
 				E5DB865E296AE34600DAD85B /* LaunchView.swift in Sources */,
 				E57443C82954B5BF00963673 /* UIApplication+Extensions.swift in Sources */,
@@ -424,6 +431,7 @@
 				E570F8FB29535D69009C85B1 /* CoinImageView.swift in Sources */,
 				E5222C7729509A560010237E /* CryptoTrackerApp.swift in Sources */,
 				E502D97E295E3F490059ABDD /* DetailView.swift in Sources */,
+				E5D57266296C9FC2003DD80A /* AlertData.swift in Sources */,
 				E5222C9F2951D3C90010237E /* Double+Extensions.swift in Sources */,
 				E5222C942950AA1A0010237E /* CircleButtonView.swift in Sources */,
 				E57443C62954AFB600963673 /* SearchBarView.swift in Sources */,

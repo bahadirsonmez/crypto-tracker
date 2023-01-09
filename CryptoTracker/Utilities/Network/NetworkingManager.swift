@@ -6,7 +6,7 @@
 //
 
 import Combine
-import Foundation
+import SwiftUI
 
 final class NetworkingManager {
     
@@ -18,7 +18,7 @@ final class NetworkingManager {
     enum NetworkingError: LocalizedError {
         case authenticationError
         case badRequest
-        case outdated
+        case invalid
         case failed
         case noData
         case unableToDecode
@@ -27,7 +27,7 @@ final class NetworkingManager {
             switch self {
             case .authenticationError: return "You need to be authenticated first."
             case .badRequest: return "Bad request"
-            case .outdated: return "The url you requested is outdated."
+            case .invalid: return "The url you requested is outdated."
             case .failed: return "Network request failed."
             case .noData: return "Response returned with no data to decode."
             case .unableToDecode: return "We could not decode the response."
@@ -62,7 +62,7 @@ final class NetworkingManager {
         case .finished:
             break
         case .failure(let error):
-            print(error.localizedDescription)
+            postAlert(with: error)
         }
     }
     
@@ -71,8 +71,17 @@ final class NetworkingManager {
         case 200...299: return .success
         case 401...500: return .failure(.authenticationError)
         case 501...599: return .failure(.badRequest)
-        case 600: return .failure(.outdated)
+        case 600: return .failure(.invalid)
         default: return .failure(.failed)
         }
+    }
+    
+    static private func postAlert(with error: Error) {
+        NotificationCenter.default.post(name: .showAlert,
+                                        object: AlertData(title: Text("Error"),
+                                                          message: Text(error.localizedDescription),
+                                                          dismissButton: .default(Text("OK")) {
+            print("Alert dismissed")
+        }))
     }
 }
