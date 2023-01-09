@@ -6,7 +6,7 @@
 //
 
 import Combine
-import SwiftUI
+import Foundation
 
 final class NetworkingManager {
     
@@ -62,7 +62,7 @@ final class NetworkingManager {
         case .finished:
             break
         case .failure(let error):
-            postAlert(with: error)
+            AlertManager.postAlert(with: error)
         }
     }
     
@@ -74,14 +74,5 @@ final class NetworkingManager {
         case 600: return .failure(.invalid)
         default: return .failure(.failed)
         }
-    }
-    
-    static private func postAlert(with error: Error) {
-        NotificationCenter.default.post(name: .showAlert,
-                                        object: AlertData(title: Text("Error"),
-                                                          message: Text(error.localizedDescription),
-                                                          dismissButton: .default(Text("OK")) {
-            print("Alert dismissed")
-        }))
-    }
+    }    
 }
