@@ -61,7 +61,7 @@ extension SettingsView {
                     .resizable()
                     .frame(width: 100, height: 100)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
-                Text("This app was made by following a @SwiftfulThinking course on Youtube. It usese MVVM Architecture, Combine and CoreData!")
+                Text("This application has been made for the purpose of education and learning new techniques. It usese MVVM Architecture, Combine and CoreData!")
                     .font(.callout)
                     .fontWeight(.medium)
                     .foregroundColor(Color.theme.accent)
@@ -90,7 +90,7 @@ extension SettingsView {
     private var developerSection: some View {
         Section(header: Text("Developer")) {
             VStack(alignment: .leading) {
-                Image("logo")
+                Image("developer")
                     .resizable()
                     .frame(width: 100, height: 100)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
