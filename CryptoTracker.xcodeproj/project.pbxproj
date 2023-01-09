@@ -285,7 +285,7 @@
 		E5222CA5295268150010237E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				E5222CA6295268410010237E /* NetworkingManager.swift */,
+				E5D57260296C471B003DD80A /* Network */,
 				E570F9002953AA74009C85B1 /* LocalFileManager.swift */,
 				E57F203D295C9929001F7526 /* HapticManager.swift */,
 			);
@@ -300,6 +300,22 @@
 				E53EDF362958E7020072254E /* CoinLogoView.swift */,
 			);
 			path = CoinImage;
+			sourceTree = "<group>";
+		};
+		E5D57260296C471B003DD80A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E5D57261296C4721003DD80A /* Service */,
+				E5222CA6295268410010237E /* NetworkingManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E5D57261296C4721003DD80A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		E5DB865929687A5D00DAD85B /* Launch */ = {
