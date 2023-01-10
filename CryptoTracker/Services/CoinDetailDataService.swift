@@ -21,14 +21,16 @@ class CoinDetailDataService {
     }
     
     func getCoinDetails() {
-        
-        guard let url = URL(string: "https://api.coingecko.com/api/v3/coins/\(coin.id)?localization=false&tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false") else { return }
-        
-        coinDetailSubscription = NetworkingManager.getData(type: CoinDetailModel.self, from: url)
-            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedCoinDetails) in
-                self?.coinDetails = returnedCoinDetails
-                self?.coinDetailSubscription?.cancel()
-            })
+        do {
+            let url = try CoingeckoEndpoint.getCoinDetailData(by: coin.id).getUrl()
+            coinDetailSubscription = NetworkingManager.getData(type: CoinDetailModel.self, from: url)
+                .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedCoinDetails) in
+                    self?.coinDetails = returnedCoinDetails
+                    self?.coinDetailSubscription?.cancel()
+                })
+        } catch let error {
+            AlertManager.postAlert(with: error)
+        }
     }
     
 }
