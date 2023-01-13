@@ -34,13 +34,13 @@ extension CoingeckoEndpoint {
 
 extension CoingeckoEndpoint {
     
-    static func getCoinsData() -> Self {
+    static func getCoinsData(by page: Int = 1) -> Self {
         return CoingeckoEndpoint(path: "/coins/markets",
                                  queryItems: [
                                     URLQueryItem(name: "vs_currency", value: "usd"),
                                     URLQueryItem(name: "order", value: "market_cap_desc"),
                                     URLQueryItem(name: "per_page", value: "250"),
-                                    URLQueryItem(name: "page", value: "1"),
+                                    URLQueryItem(name: "page", value: "\(page)"),
                                     URLQueryItem(name: "sparkline", value: "true"),
                                     URLQueryItem(name: "price_change_percentage", value: "24h")
                                  ]
