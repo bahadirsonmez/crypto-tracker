@@ -12,6 +12,8 @@ struct CryptoTrackerApp: App {
     
     @StateObject private var vm = HomeViewModel()
     @State private var showLaunchView: Bool = true
+    @State private var showAlert = false
+    @State private var alertData = AlertData.empty
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor : UIColor(Color.theme.accent)]
@@ -37,6 +39,17 @@ struct CryptoTrackerApp: App {
                     }
                 }
                 .zIndex(2.0)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .showAlert)) { notif in
+                if let data = notif.object as? AlertData {
+                    alertData = data
+                    showAlert = true
+                }
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(title: alertData.title,
+                      message: alertData.message,
+                      dismissButton: alertData.dismissButton)
             }
         }
     }
