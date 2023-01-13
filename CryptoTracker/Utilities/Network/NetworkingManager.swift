@@ -44,6 +44,13 @@ final class NetworkingManager {
             .eraseToAnyPublisher()
     }
     
+    static func getImageData(from url: URL) -> AnyPublisher<Data, any Error> {
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .tryMap({ try handleURLResponse(output: $0, url: url) })
+            .retry(3)
+            .eraseToAnyPublisher()
+    }
+    
     static func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {
         if let response = output.response as? HTTPURLResponse {
             switch handleNetworkResponse(response) {
