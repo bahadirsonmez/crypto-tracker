@@ -11,7 +11,7 @@ struct PortfolioView: View {
     
     @EnvironmentObject private var viewModel: HomeViewModel
     @Environment(\.presentationMode) var presentationMode
-    @State private var selectedCoin: CoinModel? = nil
+    @State private var selectedCoin: CoinModel?
     @State private var quantityText: String = ""
     @State private var showCheckmark: Bool = false
     

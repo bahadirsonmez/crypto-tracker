@@ -14,7 +14,7 @@ struct HomeView: View {
     @State private var showPortfolioView: Bool = false // new sheet
     @State private var showSettingsView: Bool = false // new sheet
     
-    @State private var selectedCoin: CoinModel? = nil
+    @State private var selectedCoin: CoinModel?
     @State private var showDetailView: Bool = false
     
     var body: some View {
