@@ -10,7 +10,7 @@ import Combine
 
 class MarketDataService {
     
-    @Published var marketData: MarketDataModel? = nil
+    @Published var marketData: MarketDataModel?
     var marketDataSubscription: AnyCancellable?
     
     init() {
